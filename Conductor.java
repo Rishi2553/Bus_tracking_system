@@ -71,6 +71,7 @@ public class Conductor {
             System.out.println("1. Issue Ticket");
             System.out.println("2. Move to Next Stop");
             System.out.println("3. Reset Trip");
+            System.out.println("4. Exit");
             System.out.print("Enter choice: ");
             int choice = sc.nextInt();
 
@@ -78,6 +79,11 @@ public class Conductor {
                 case 1 -> conductor.issueTicket();
                 case 2 -> conductor.moveToNextStop();
                 case 3 -> conductor.resetTrip();
+                 case 4 -> {
+                conductor.resetTrip(); // 👈 Reset before exiting
+                System.out.println("Trip reset. Exiting Conductor Program...");
+                return;
+            }
                 default -> System.out.println("Invalid choice.");
             }
         }
